@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container{
+width:750px;
+height:450px;
+padding:10px;
+border:1px solid #aaaaaa;
+}
+</style>
+<script>
+function allowDrop(ev){
+ev.preventDefault();
+}
+function drag(ev){
+ev.dataTransfer.serData("text/html",ev.target.id);
+}
+function drop(ev){
+ev.preventDefault();
+var data=ev.dataTransfer.getData("text/html");
+ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+<p>Drag the logo into the rectangle:</p>
+<div id="div1" class="container" Ondrop="drag(event)" Ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="https://www.v3cars.com/media/content/141133ferrari.webp" alt="ferrari car" draggable="true" Ondragstart="drag(event)"/>
+</body>
+</html>
+
