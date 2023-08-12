@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h-center{
+height:30px;
+width:50px;
+padding:0px;
+border-width:0px;
+}
+</style>
+</head>
+<body>
+<div>
+<input type="text" value=" " id="result"><br>
+<div class="container">
+<input type="button" onclick="display('(')" value="(">
+<input type="button" onclick="display('CE')" value="CE">
+<input type="button" onclick="display(')')" value=")">
+<input type="button" onclick="clearScreen()" value="C"><br>
+<input type="button" onclick="display()" value="1">
+<input type="button" onclick="display()" value="2">
+<input type="button" onclick="display()" value="3">
+<input type="button" onclick="display()" value="+"><br>
+<input type="button" onclick="display()" value="4">
+<input type="button" onclick="display()" value="5">
+<input type="button" onclick="display()" value="6">
+<input type="button" onclick="display()" value="-"><br>
+<input type="button" onclick="display()" value="7">
+<input type="button" onclick="display()" value="8">
+<input type="button" onclick="display()" value="9">
+<input type="button" onclick="display()" value="*"><br>
+<input type="button" onclick="display()" value=".">
+<input type="button" onclick="display()" value="0">
+<input type="button" onclick="calculate()" value="=">
+<input type="button" onclick="display()" value="/"><br>
+</div>
+<script>
+function clearScreen() {
+    document.getElementById("result").value = "";
+}
+function display(value) {
+    document.getElementById("result").value += value;
+}
+function calculate() {
+    var p = document.getElementById("result").value;
+    var q = eval(p);
+    document.getElementById("result").value = q;
+}
+</script>
+</body>
+</html>
