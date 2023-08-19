@@ -1,52 +1,87 @@
-<!DOCTYPE html>
+<!DocType html>
 <html>
 <head>
+<title>
+Calculator
+</title>
 <style>
-h-center{
-height:30px;
-width:50px;
-padding:0px;
-border-width:0px;
+.container{
+ border:4px solid grey;
+ width:295px;
+ height:340px;
+ border-radius:2px;
+ margin-top:50px;
+ margin-left:430px;
+ padding:24px;
+ background-color:grey;
 }
-</style>
+input[type=text]{
+  width:250px;
+  padding: 12px 20px;
+  margin: 4px 0;
+  border-radius:2px;
+  font-size:20px;
+  background-color:lightgrey;
+}
+input[type=button]{
+  width:70px;
+  height:50px;
+  padding: 7px 20px;
+  margin: 4px 0;
+  border-radius:10px;
+  font-size:20px;
+  background-color:aqua;
+}
+input[type=button]:hover{
+  box-shadow:5px 5px 15px rgba(1,0,0,0.5);
+}
+#t1{
+background-color:yellow;
+}
+#t2{
+background-color:skyblue;
+}
+#t3{
+font-size:25px;
+text-align:center;
+}
+.thin{
+text-decoration-line:underline;
+text-decoration-color:lightgrey;
+text-decoration-thickness:5px;
+}
+</style
 </head>
 <body>
-<div>
-<input type="text" value=" " id="result"><br>
+<h1 style="font-family:math; color:aqua; font-size:50px; text-align:center;"><div class="thin">Calculator</div></h1>
 <div class="container">
-<input type="button" onclick="display('(')" value="(">
-<input type="button" onclick="display('CE')" value="CE">
-<input type="button" onclick="display(')')" value=")">
-<input type="button" onclick="clearScreen()" value="C"><br>
-<input type="button" onclick="display('1')" value="1">
-<input type="button" onclick="display('2')" value="2">
-<input type="button" onclick="display('3')" value="3">
-<input type="button" onclick="display('+')" value="+"><br>
-<input type="button" onclick="display('4')" value="4">
-<input type="button" onclick="display('5')" value="5">
-<input type="button" onclick="display('6')" value="6">
-<input type="button" onclick="display('-')" value="-"><br>
-<input type="button" onclick="display('7')" value="7">
-<input type="button" onclick="display('8')" value="8">
-<input type="button" onclick="display('9')" value="9">
-<input type="button" onclick="display('*')" value="*"><br>
-<input type="button" onclick="display('.')" value=".">
-<input type="button" onclick="display('0')" value="0">
-<input type="button" onclick="calculate('=')" value="=">
-<input type="button" onclick="display('/')" value="/"><br>
+<form name="form1">
+<input type="text" id=" res" name="answer"><br>
+<input type="button" id='t2' value='(' onclick="form1.answer.value+='('" > 
+<input type="button" id='t1' value='CE' onclick="form1.answer.value=''" > 
+<input type="button" id='t2' value=')' onclick="form1.answer.value+=')'" > 
+<input type="button" id='t1' value='C' onclick="form1.answer.value=form1.answer.value.substring(0,form1.answer.value.length-1)" > 
+<br>
+<input type="button" id='1' value='1' onclick="form1.answer.value+='1'" > 
+<input type="button" id='2' value='2' onclick="form1.answer.value+='2'" > 
+<input type="button" id='3' value='3' onclick="form1.answer.value+='3'" > 
+<input type="button" id='add' value='+' onclick="form1.answer.value+='+'" > 
+<br>
+<input type="button" id='4' value='4' onclick="form1.answer.value+='4'" > 
+<input type="button" id='5' value='5' onclick="form1.answer.value+='5'" > 
+<input type="button" id='6' value='6' onclick="form1.answer.value+='6'" > 
+<input type="button" id='sub' value='-' onclick="form1.answer.value+='-'" > 
+<br>
+<input type="button" id='7' value='7' onclick="form1.answer.value+='7'" > 
+<input type="button" id='8' value='8' onclick="form1.answer.value+='8'" > 
+<input type="button" id='9' value='9' onclick="form1.answer.value+='9'" > 
+<input type="button" id='t3' value='*' onclick="form1.answer.value+='*'" > 
+<br>
+<input type="button" id='dot' value='.' onclick="form1.answer.value+='.'" > 
+<input type="button" id='0' value='0' onclick="form1.answer.value+='0'" > 
+<input type="button" id='equal' value='=' onclick="form1.answer.value=eval(form1.answer.value)" > 
+<input type="button" id='div' value='/' onclick="form1.answer.value+='/'" > 
 </div>
-<script>
-function clearScreen() {
-    document.getElementById("result").value = "";
-}
-function display(value) {
-    document.getElementById("result").value += value;
-}
-function calculate() {
-    var p = document.getElementById("result").value;
-    var q = eval(p);
-    document.getElementById("result").value = q;
-}
-</script>
 </body>
 </html>
+
